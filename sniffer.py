@@ -36,10 +36,18 @@ def main():
             print('Version: {}, Header Length: {}, TTL: {},\nProtocol: {}, Source: {}, Target: {}'.format(IP_datagram.version, IP_datagram.header_length, IP_datagram.ttl, IP_datagram.proto, IP_datagram.src_ip, IP_datagram.dest_ip))
             
             try:
-                name, alias, addresslist = socket.gethostbyaddr(IP_datagram.dest_ip)
+                src_name, alias, addresslist = socket.gethostbyaddr(IP_datagram.src_ip)
             except socket.herror:
-                name = "unknown host"
-            print("Destination host name:", name)
+                src_name = "unknown"
+
+            print("SOURCE:", src_name)
+
+            try:
+                dest_name, alias, addresslist = socket.gethostbyaddr(IP_datagram.dest_ip)
+            except socket.herror:
+                dest_name = "unknown"
+            print("DEST:", dest_name)
+                
 
             # TCP
             if IP_datagram.proto == TCP_PROTOCOL:
