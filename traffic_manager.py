@@ -47,7 +47,7 @@ def main():
     while True:
         #max theoretical size of IP datagram 
         #but usually they're < 1500 bytes
-        data, addr = conn.recvfrom(65535) 
+        data, addr = conn.recvfrom(65535)
         ethernet_frame = get_ethernet_frame(data)
         
         # if IP_datagram.dest_ip != "10.67.11.136":
