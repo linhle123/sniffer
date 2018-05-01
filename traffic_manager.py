@@ -36,9 +36,8 @@ def main():
         else:
             print("invalid action code")
             return
-
-    # dropAll()
     # return
+    # dropAll()
 
     #3rd arg is to make this compatible with all machines
     conn = socket.socket(socket.AF_PACKET, socket.SOCK_RAW, socket.ntohs(3))
