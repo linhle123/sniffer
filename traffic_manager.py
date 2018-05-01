@@ -1,4 +1,4 @@
-import iptc
+# import iptc
 import socket
 import struct
 from collections import namedtuple
@@ -38,7 +38,7 @@ def main():
             return
 
     # dropAll()
-    return
+    # return
 
     #3rd arg is to make this compatible with all machines
     conn = socket.socket(socket.AF_PACKET, socket.SOCK_RAW, socket.ntohs(3))
